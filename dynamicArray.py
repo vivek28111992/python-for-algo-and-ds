@@ -1,4 +1,5 @@
 import ctypes
+import sys
 
 class M(object):
   
@@ -48,12 +49,19 @@ class DynamicArray(object):
     
   def make_array(self, new_cap):
     return (new_cap * ctypes.py_object)()
-    
+
+  def array_size(self, arr):
+    return sys.getsizeof(arr)
+
 arr = DynamicArray()
 arr.append(1)
 print(len(arr))
 
 arr.append(2)
-print(len(arr))
+arr.append(3)
+arr.append(4)
+arr.append(5)
 
+print(len(arr))
+print(arr.array_size(arr))
 print(arr[1])
