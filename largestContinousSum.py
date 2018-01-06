@@ -8,7 +8,7 @@ def largestContinousSum(arr):
 
     for i, num in enumerate(arr[1:]):
         total_sum = current_sum+num
-        if(total_sum >= num):
+        if(total_sum > num):
             current_sum = total_sum
 
         else:
